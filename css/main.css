@@ -1,0 +1,371 @@
+/*Utility Class*/
+.hide
+{
+  display: none;
+}
+
+/* General rules - scales images, videos to size of container */
+img, embed, object, video {
+  max-width: 100%; }
+
+
+/*switch box model*/
+html {
+  box-sizing: border-box; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+/*Fix for scaling of images IE*/
+img {
+  -ms-interpolation-mode: bicubic; 
+}
+
+/*Fonts*/
+@font-face {
+font-family: 'lustriaregular';
+src: url('../fonts/lustria-regular-webfont.eot');
+src: url('../fonts/lustria-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('../fonts/lustria-regular-webfont.woff') format('woff'),
+url('../fonts/lustria-regular-webfont.ttf') format('truetype'),
+url('../fonts/lustria-regular-webfont.svg#lustriaregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'latoregular';
+src: url('../fonts/lato-regular-webfont.eot');
+src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('../fonts/lato-regular-webfont.woff') format('woff'),
+url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/*General Rules for Elements*/
+
+body
+{
+  font-family: Arial, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+a 
+{ 
+  color:#000; 
+  text-decoration: none;  
+  transition:all .1s linear 0s;
+}
+
+/*HEADER*/
+#mainContainer{
+  background-color: darkred;
+}
+#menu_icon{
+  cursor: pointer;
+}
+header{
+  position: absolute;
+  z-index: 999999999;
+  min-width: 90%;
+  margin: 0 5%;
+  min-height: 13vh;
+  display: flex;
+  align-items: center;
+}
+#logo{
+  padding: 0 2%;
+  color: #FFFFFF;
+  font-family: "Futura";
+  font-size: 22px;
+}
+
+/*MENU*/
+.menu nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60vh;
+  background: #0F2971;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  color: #8F8F78;
+  align-content:center;
+  transition: all 2s 0.3s;
+  padding: 50px;
+
+  transform: translateY(-60vh);
+}
+.menu nav ul{
+  align-self:center;
+  justify-self:center;
+  margin: auto;
+}
+
+.menu nav ul li{
+  text-align: center;
+  /*list-style: none;*/
+  font-family: Poppins, Roboto, sans-serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+  padding: 10px;
+}
+.menu nav ul li a{
+  color: #FFAF38;
+}
+.menu nav ul li a:hover{
+  color: #FEFEFE;
+}
+.location {
+  display: flex;
+  width: 100vw;
+  height: 40vh;
+  background: #111;
+  position: absolute;
+  z-index: 9998;
+  transform: translateY(-60vh);
+  transition: all 2s;
+  padding: 10px;
+}
+.location-info{
+  color: green;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Poppins, Roboto, sans-serif;
+  align-self: center;
+}
+.location-info h2{
+  font-size: 25px;
+  letter-spacing: 7px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+.location-info a{
+  color: white;
+  font-size: 20px;
+}
+.location-info p{
+  margin-top: 2em;
+}
+.location-info p span{
+  font-size: 20px;
+  font-weight: bold;
+  color: pink;
+}
+
+/*MENU ANIMATION*/
+.black-menu-overlay{
+  position: absolute;
+  top:0;
+  height: 0;
+  opacity: 0;
+  transition: all 1s;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+}
+
+nav.opened-menu{
+  transition: all 1s;
+  transform: translateY(0);
+}
+
+.opened-location{
+  transition: all 1s;
+  transform: translateY(60vh);
+}
+
+.opened-overlay{
+  transition: all 1s;
+  opacity: 0.5;
+  z-index: 9997;
+}
+.bottom-rotate{
+  transform-origin: right;
+  transform: rotate(45deg);
+}
+.top-rotate{
+  transform-origin: center;
+  transform: translate(125px,35px) rotate(-45deg);
+}
+.middle-opacity{
+  opacity: 0;
+}
+
+/*SLIDES*/
+.slide{
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: 50vh 50vh;
+}
+.one{
+  font-family: Poppins, Roboto, sans-serif;
+  text-align: center;
+}
+.heading{
+  grid-row: 1/2;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.headerContentWrapper h2{
+  font-size: 50px;
+  color: green;
+  padding-bottom: 20px;
+}
+.headerContentWrapper p{
+  font-size: 20px;
+  padding-top: 10px;
+  color: grey;
+}
+
+.contact_button{
+  background: black;
+  color: gold;
+  letter-spacing: 3px;
+  padding: 1em;
+  width: 20em;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+.contactInfo{
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+.contactInfo h2{
+  font-size: 50px;
+  padding-bottom: 30px;
+  color: green;
+}
+.form{
+  grid-row: 3/4;
+}
+
+/*RESPONSIVE*/
+
+
+@media (min-width: 1024px){
+  /*MENU*/
+  .menu nav{
+    width: 40vw;
+    height: 100vh;
+    transform: translateX(-40vw);
+  }
+  .menu nav ul li{
+    font-size: 40px;
+    margin: 0.5em;
+  }
+  .location{
+    width: 30vw;
+    height: 100vh;
+    min-width: 400px;
+    transform: translateX(-40vw);
+  }
+  .location h2{
+    font-size: 40px;
+  }
+
+  /*MENU ANIMATION*/
+  nav.opened-menu{
+    transition: all 1s;
+    transform: translateX(0);
+  }
+  .opened-location{
+    transition: all 1.5s;
+    transform: translateX(40vw);
+  }
+
+  /*SLIDE*/
+  .slide{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .heading{
+    grid-column: 1/2;
+    grid-row: 1/4;
+    text-align: left;
+    display:  grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .headerContentWrapper{
+    grid-row: 2;
+  }
+  .contactCall, .contactEmail{
+    grid-row: 2;
+  }
+  .heading h2{
+    padding-left: 0;
+  }
+
+  .contactInfo{
+    grid-column: 2/3;
+    grid-row: 1/4;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  }
+
+  @media (min-width: 805px) and (max-width: 1024px){
+    /*MENU*/
+  .menu nav{
+    width: 60vw;
+    height: 100vh;
+    transform: translateX(-60vw);
+  }
+  .menu nav ul li{
+    font-size: 40px;
+    margin: 0.5em;
+  }
+  .location{
+    width: 40vw;
+    height: 100vh;
+    transform: translateX(-60vw);
+  }
+  .location h2{
+    font-size: 40px;
+  }
+  /*SLIDES*/
+  .contactInfo{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  /*MENU ANIMATION*/
+  nav.opened-menu{
+    transition: all 1s;
+    transform: translateX(0);
+  }
+  .opened-location{
+    transition: all 1.5s;
+    transform: translateX(60vw);
+  }
+
+  }
